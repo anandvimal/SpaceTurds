@@ -11,18 +11,18 @@ RED      = ( 255,   0,   0)
 BLUE     = (   0,   0, 255)
 
 
-black = (0,0,0)
-white = (255,255,255)
-red = (200,0,0)
-green = (0,200,0)
+black   = (   0,   0,   0)
+white   = ( 255, 255, 255)
+red     = ( 200,   0,   0)
+green   = (   0, 200,   0)
 
 bright_red = (255,0,0)
 bright_green = (0,255,0)
 
 block_color = (53,115,255)
 
-turd_width = 72
-
+turd_width  = 72
+turd_height = 72
 
 # Initialize Pygame
 pygame.init()
@@ -248,7 +248,6 @@ class Falling_Objects(pygame.sprite.Sprite):
             self.rect.x = random.randrange(0, screen_width - self.width)
 
 
-
 # --- Classes
 class Player(pygame.sprite.Sprite):
     width = 99
@@ -281,14 +280,11 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.rect.y -= 10
 
-
 player = Player()
 player.rect.y = screen_height-100
 player.rect.x = screen_width/2
 
-
 all_sprites_list.add(player)
-
 
 for i in range(50):
     object = Falling_Objects()
@@ -296,7 +292,6 @@ for i in range(50):
     object.rect.y = random.randrange(-1000,0)
     object_list.add(object)
     all_sprites_list.add(object)
-
 
 
 game_intro()
