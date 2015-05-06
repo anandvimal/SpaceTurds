@@ -79,6 +79,14 @@ class Block(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect()
 '''
+
+def game_over():
+    time.sleep(3)
+    print("Game Over!")
+    pygame.quit()
+    quit()
+
+
 def game_loop():
     global done, score
 # -------- Main Program Loop -----------
@@ -298,7 +306,7 @@ for i in range(50):
     all_sprites_list.add(object)
 
 
-
+game_over()
 game_intro()
 game_loop()
 pygame.quit()
