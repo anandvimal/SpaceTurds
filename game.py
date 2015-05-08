@@ -166,18 +166,6 @@ def button(msg,x,y,w,h,ic,ac,action=None):
     textRect.center = ( (x+(w/2)), (y+(h/2)) )
     screen.blit(textSurf, textRect)
 
-
-def things_dodged(count):
-    font = pygame.font.SysFont(None, 25)
-    text = font.render("Dodged: "+str(count), True, black)
-    screen.blit(text,(0,0))
-
-def things(thingx, thingy, thingw, thingh, color):
-    pygame.draw.rect(screen, color, [thingx, thingy, thingw, thingh])
-
-#def car(x,y):
-    #screen.blit(carImg,(x,y))
-
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
@@ -187,16 +175,9 @@ def message_display(text):
     TextSurf, TextRect = text_objects(text, largeText)
     TextRect.center = ((screen_width/2),(screen_height/2))
     screen.blit(TextSurf, TextRect)
-
     pygame.display.update()
-
     time.sleep(2)
 
-    #game_loop()
-
-
-def crash():
-    message_display('You Crashed')
 
 def game_intro():
 
@@ -216,7 +197,7 @@ def game_intro():
         screen.blit(TextSurf, TextRect)
 
         button("GO!",150,450,100,50,green,bright_green, game_loop )
-        button("Quit",550,450,100,50,red,bright_red,quit)
+        button("Quit",450,450,100,50,red,bright_red,quit)
         #button("Quit",550,450,100,50,red,bright_red,quitgame)
 
         pygame.display.update()
@@ -293,7 +274,7 @@ for i in range(50):
     object_list.add(object)
     all_sprites_list.add(object)
 
-
+message_display('text')
 game_intro()
 game_loop()
 pygame.quit()
